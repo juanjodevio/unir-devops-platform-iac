@@ -18,6 +18,8 @@ resource "aws_iam_role" "ecs_task_execution_role" {
 EOF
 }
 
+
+
 resource "aws_iam_role" "ecs_task_role" {
   name = "${var.name}-ecsTaskRole"
 
