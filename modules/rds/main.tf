@@ -24,3 +24,25 @@ resource "aws_db_subnet_group" "default" {
     Environment = var.environment
   }
 }
+
+
+resource "aws_security_group" "rdssg" {
+    name =  "${var.name}-db-security-group-${var.environment}"
+    vpc_id =  var.vpc
+
+    ingress {
+        from_port = 3306
+        to_port = 3306
+        protocol = "tcp"
+        cidr_blocks = var.private_subnets_cidr
+
+    }
+
+    egress {
+        from_port = 0
+        to_port = 0
+        protocol = "-1"
+        cidr_blocks = var.private_subnets_cidr
+
+    }
+}

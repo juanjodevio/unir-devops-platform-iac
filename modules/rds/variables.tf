@@ -21,3 +21,9 @@ variable "environment" {
 variable "private_subnets" {
   description = "List of private subnets"
 }
+variable "private_subnets_cidr" {
+  description = "List of private subnets"
+}
+variable "vpc" {
+  description = "List of private subnets"
+}

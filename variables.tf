@@ -62,6 +62,10 @@ variable "health_check_path" {
   description = "Http path for task health check"
   default     = "/health"
 }
+variable "platform_on" {
+  description = "Switch to turn off the infraestructure"
+  default     = 0
+}
 
 # variable "tsl_certificate_arn" {
 #   description = "The ARN of the certificate that the ALB uses for https"

@@ -4,6 +4,7 @@ data "aws_acm_certificate" "cert" {
 }
 
 module "alb" {
+  
   source              = "./modules/alb"
   name                = var.name
   vpc_id              = module.vpc.id

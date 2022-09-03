@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 locals {
-  unir-devops-medex-app = { version = "v0.7.4" }
+  unir-devops-medex-app = { version = "v0.7.7" }
 }
 # terraform {
 #   backend "s3" {
