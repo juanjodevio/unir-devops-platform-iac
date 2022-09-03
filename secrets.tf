@@ -7,21 +7,21 @@ locals {
 }
 
 resource "random_password" "django_secret_key" {
-  length  = 32
-  special = true
+  length  = 16
   upper   = true
+  special = false
 }
 
 resource "random_password" "django_superuser_password" {
   length  = 16
-  special = true
   upper   = true
+  special = false
 }
 
 resource "random_password" "medex_app_db_password" {
-  length  = 32
-  special = true
+  length  = 16
   upper   = true
+  special = false
 }
 
 module "secrets" {

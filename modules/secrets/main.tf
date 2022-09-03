@@ -7,6 +7,7 @@
 resource "aws_secretsmanager_secret" "application_secrets" {
   count = length(var.application-secrets)
   name  = "${var.name}-application-secrets-${var.environment}-${element(keys(var.application-secrets), count.index)}"
+  recovery_window_in_days=0
 }
 
 
