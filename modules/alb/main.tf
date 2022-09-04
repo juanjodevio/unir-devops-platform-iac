@@ -1,3 +1,15 @@
+data "aws_route53_zone" "main" {
+  name         = "juanjodev.io"
+}
+
+resource "aws_route53_record" "www" {
+  zone_id = data.aws_route53_zone.main.zone_id
+  name    = "medex.${data.aws_route53_zone.main.name}"
+  type    = "CNAME"
+  ttl     = 300
+  records = [aws_lb.main.dns_name]
+}
+
 resource "aws_lb" "main" {
   name               = "${var.name}-alb-${var.environment}"
   internal           = false
